@@ -5,17 +5,20 @@
     "build:css": "tailwindcss -i ./src/style/global.css -o ./public/style.css",
     "dev:css": "tailwindcss -i ./src/style/global.css -o ./public/style.css --watch",
     "dev": "wrangler dev",
+    "dev:all": "concurrently --names \"wrangler,tailwind\" \"pnpm dev\" \"pnpm dev:css\"",
     "deploy": "wrangler deploy --minify",
     "cf-typegen": "wrangler types --env-interface CloudflareBindings"
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.3.0",
+    "dayjs": "^1.11.21",
     "hono": "^4.12.23",
     "microcms-js-sdk": "^3.4.0",
     "tailwindcss": "^4.3.0"
   },
   "devDependencies": {
     "@types/node": "^25.9.2",
+    "concurrently": "^10.0.3",
     "wrangler": "^4.98.0"
   }
 }
