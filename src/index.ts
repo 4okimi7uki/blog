@@ -13,7 +13,7 @@ app.use("*", async (c, next) => {
     c.header("X-Cache", cacheHit ? "HIT" : "MISS");
   }
 });
-
+app.get("/", (c) => c.redirect("/posts", 301));
 app.route("/posts", posts);
 
 export default app;
