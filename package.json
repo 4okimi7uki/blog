@@ -15,7 +15,7 @@
     "postinstall": "lefthook install"
   },
   "dependencies": {
-    "@tailwindcss/cli": "^4.3.0",
+    "@tailwindcss/cli": "^4.3.1",
     "dayjs": "^1.11.21",
     "hono": "^4.12.23",
     "microcms-js-sdk": "^3.4.0",
