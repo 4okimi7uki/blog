@@ -1,6 +1,8 @@
+import { Child } from "hono/jsx";
+
 type Props = {
   title: string;
-  children: any;
+  children: Child;
 };
 export const Layout = ({ title, children }: Props) => {
   return (
