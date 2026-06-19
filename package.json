@@ -17,7 +17,7 @@
   "dependencies": {
     "@tailwindcss/cli": "^4.3.0",
     "dayjs": "^1.11.21",
-    "hono": "^4.12.23",
+    "hono": "^4.12.26",
     "microcms-js-sdk": "^3.4.0",
     "tailwindcss": "^4.3.1"
   },
