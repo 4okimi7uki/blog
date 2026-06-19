@@ -19,7 +19,7 @@
     "dayjs": "^1.11.21",
     "hono": "^4.12.23",
     "microcms-js-sdk": "^3.4.0",
-    "tailwindcss": "^4.3.0"
+    "tailwindcss": "^4.3.1"
   },
   "devDependencies": {
     "@types/node": "^25.9.2",
