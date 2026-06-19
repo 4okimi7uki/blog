@@ -3,7 +3,17 @@ name: Lint & Type Check
 on:
   push:
     branches: [main]
+    paths:
+      - "src/**/*.ts"
+      - "src/**/*.tsx"
+      - "tsconfig.json"
+      - "eslint.config.js"
   pull_request:
+    paths:
+      - "src/**/*.ts"
+      - "src/**/*.tsx"
+      - "tsconfig.json"
+      - "eslint.config.js"
 
 permissions:
   contents: read
