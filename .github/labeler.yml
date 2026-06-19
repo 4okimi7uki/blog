@@ -1,0 +1,36 @@
+feature:
+  - changed-files:
+      - any-glob-to-any-file:
+          - src/routes/**
+          - src/features/**
+
+ui:
+  - changed-files:
+      - any-glob-to-any-file:
+          - src/components/**
+          - src/style/**
+
+lib:
+  - changed-files:
+      - any-glob-to-any-file:
+          - src/lib/**
+
+ci:
+  - changed-files:
+      - any-glob-to-any-file:
+          - .github/**
+          - lefthook.yml
+
+config:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "*.json"
+          - "*.toml"
+          - "*.yml"
+          - "!.github/**"
+          - "!lefthook.yml"
+
+dependencies:
+  - changed-files:
+      - any-glob-to-any-file:
+          - pnpm-lock.yaml
