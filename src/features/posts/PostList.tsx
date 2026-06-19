@@ -1,6 +1,7 @@
 import dayjs from "dayjs";
-import { Layout } from "../../components/Layout";
 import { MicroCMSListResponse } from "microcms-js-sdk";
+
+import { Layout } from "../../components/Layout";
 import { Post } from "../../lib/microcms";
 
 type Props = {
@@ -23,7 +24,9 @@ export const PostList = ({ posts }: Props) => {
                     class="hover:border-b-white border-b border-dashed border-b-transparent transition-all flex justify-between items-center px-5 py-1"
                   >
                     <div>{post.title}</div>
-                    <div class="text-[12px] ml-1 w-31.25">{dayjs(post.publishedAt).format("YYYY/MM/DD HH:mm:ss")}</div>
+                    <div class="text-[12px] ml-1 w-31.25">
+                      {dayjs(post.publishedAt).format("YYYY/MM/DD HH:mm:ss")}
+                    </div>
                   </a>
                 </li>
               );

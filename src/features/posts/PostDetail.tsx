@@ -1,7 +1,10 @@
+import { MicroCMSContentId, MicroCMSDate } from "microcms-js-sdk";
+
 import { Layout } from "../../components/Layout";
+import { Post } from "../../lib/microcms";
 
 type Props = {
-  post: any;
+  post: Post & MicroCMSContentId & MicroCMSDate;
 };
 
 export const PostDetail = ({ post }: Props) => {
