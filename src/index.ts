@@ -1,6 +1,7 @@
 import { Hono } from "hono";
-import { posts } from "./routes/posts";
+
 import { getMicroCMSClient } from "./lib/microcms";
+import { posts } from "./routes/posts";
 import { AppContext } from "./types";
 
 const app = new Hono<AppContext>();
