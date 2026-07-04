@@ -9,7 +9,7 @@ type Props = {
 
 export const PostDetail = ({ post }: Props) => {
   return (
-    <Layout title={post?.title}>
+    <Layout title={post?.title} currentPath="/posts">
       <div dangerouslySetInnerHTML={{ __html: post?.content }} />
     </Layout>
   );
