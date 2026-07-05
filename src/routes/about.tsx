@@ -1,10 +1,10 @@
 import { Hono } from "hono";
 
-import { Biography } from "../features/about/Biography";
+import { About } from "../features/about/About";
 import { AppContext } from "../types";
 
 const about = new Hono<AppContext>();
 
-about.get("/", (c) => c.html(<Biography />));
+about.get("/", (c) => c.html(<About />));
 
 export { about };
