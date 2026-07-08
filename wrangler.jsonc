@@ -4,7 +4,7 @@
  */
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "cloudflare-blog",
+  "name": "4okimi7uki-cf-page",
   "main": "src/index.tsx",
   "compatibility_date": "2026-06-07",
   "assets": {
