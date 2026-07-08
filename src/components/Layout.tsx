@@ -11,7 +11,7 @@ type Props = {
   children: Child;
 };
 const SITE_URL = "https://cloudflare-blog.example.workers.dev"; // TODO: 本番ドメインに差し替え
-const DEFAULT_DESCRIPTION = "4okimi7ukiの技術ブログ";
+const DEFAULT_DESCRIPTION = "This is 4okimi7uki's hobby site";
 const DEFAULT_OG_IMAGE = `${SITE_URL}/image/default-og.png`; // TODO: 画像を用意
 
 export const Layout = ({ title, currentPath, ogImage, description, children }: Props) => {
@@ -28,6 +28,12 @@ export const Layout = ({ title, currentPath, ogImage, description, children }: P
         <meta name="description" content={pageDescription} />
         <meta name="theme-color" content="#0D1117" />
         <link rel="canonical" href={pageUrl} />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+        />
 
         <meta property="og:site_name" content="4okimi7uki" />
         <meta property="og:title" content={pageTitle} />
@@ -46,7 +52,7 @@ export const Layout = ({ title, currentPath, ogImage, description, children }: P
 
         <link rel="stylesheet" href="/style.css" />
       </head>
-      <body className="bg-[#0D1117] text-[#9198a1]">
+      <body className="bg-[#0D1117] text-[#9198a1] overflow-x-hidden">
         <div className="max-w-5xl mb-40 flex flex-col md:flex-row mx-4 mt-8 md:mt-20 lg:mt-32 lg:mx-auto">
           <aside className="md:w-50 md:shrink-0 -mx-4 md:mx-0 md:px-0">
             <div className="lg:sticky lg:top-20">
@@ -54,7 +60,7 @@ export const Layout = ({ title, currentPath, ogImage, description, children }: P
               <Navigation currentPath={currentPath} />
             </div>
           </aside>
-          <main class="flex-auto min-w-0 mt-6 md:mt-0 flex flex-col">
+          <main class="flex-auto min-w-0 mt-6 md:mt-0 flex flex-col relative">
             {children}
             <footer class="md:w-9/12 text-sm flex justify-between items-center mt-20">
               <div>©︎ 2026 Mizuki Aoki.</div>

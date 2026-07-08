@@ -6,6 +6,68 @@
   --color-secondary-400: #your-color;
   --color-secondary-500: #your-color;
   --color-line-default: #3d444d;
+  --animate-ghost: ghost 16s ease-in-out infinite;
+
+  /* フェードで消えている2%区間(23-25%など)に translate をジャンプさせ、
+     再出現のたびに別の位置に現れるように見せる。100%→0% のループ境界も透明なので繋ぎ目は見えない */
+  @keyframes ghost {
+    0% {
+      opacity: 0;
+      translate: 0 0;
+      rotate: -2deg;
+    }
+    5%,
+    18% {
+      opacity: 0.2;
+    }
+    23% {
+      opacity: 0;
+      translate: 0 0;
+      rotate: -2deg;
+    }
+    25% {
+      opacity: 0;
+      translate: 45vw 5vh;
+      rotate: 3deg;
+    }
+    30%,
+    43% {
+      opacity: 0.2;
+    }
+    48% {
+      opacity: 0;
+      translate: 45vw 5vh;
+      rotate: 3deg;
+    }
+    50% {
+      opacity: 0;
+      translate: 15vw 35vh;
+      rotate: -3deg;
+    }
+    55%,
+    68% {
+      opacity: 0.2;
+    }
+    73% {
+      opacity: 0;
+      translate: 15vw 35vh;
+      rotate: -3deg;
+    }
+    75% {
+      opacity: 0;
+      translate: 50vw 22vh;
+      rotate: 2deg;
+    }
+    80%,
+    93% {
+      opacity: 0.2;
+    }
+    100% {
+      opacity: 0;
+      translate: 50vw 22vh;
+      rotate: 2deg;
+    }
+  }
 }
 
 @layer base {

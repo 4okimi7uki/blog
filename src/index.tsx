@@ -1,6 +1,7 @@
 import { Hono } from "hono";
 import { basicAuth } from "hono/basic-auth";
 
+import { NotFound } from "./features/error/NotFound";
 import { getMicroCMSClient } from "./lib/microcms";
 import { about } from "./routes/about";
 import { misc } from "./routes/misc";
@@ -29,5 +30,7 @@ app.use("*", async (c, next) => {
 app.route("/", about);
 app.route("/posts", posts);
 app.route("/misc", misc);
+
+app.notFound((c) => c.html(<NotFound />, 404));
 
 export default app;

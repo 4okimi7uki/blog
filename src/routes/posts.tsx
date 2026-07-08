@@ -15,7 +15,6 @@ posts.get("/", async (c) => {
   const { html, hit } = await withKVCache(c.env.BLOG_CACHE, `post`, revalidate, async () => {
     const posts = await client.getPosts();
     const contents = posts.contents;
-    console.log(posts.contents);
     return renderToString(<PostList posts={contents} />);
   });
 
@@ -29,18 +28,18 @@ posts.get("/:slug", async (c) => {
 
   const post = await client.getPost(slug);
   const { prevPost, nextPost } = await client.getPrevNextPost(post.publishedAt);
-  const html = renderToString(<PostDetail post={post} prevPost={prevPost} nextPost={nextPost} />);
+  // const html = renderToString(<PostDetail post={post} prevPost={prevPost} nextPost={nextPost} />);
 
-  // const { html, hit } = await withKVCache(
-  //   c.env.BLOG_CACHE,
-  //   `post:${slug}`,
-  //   revalidate,
-  //   async () => {
-  //     const post = await client.getPost(slug);
-  //     return renderToString(<PostDetail post={post} />);
-  //   },
-  // );
-  // c.set("cacheHit", hit);
+  const { html, hit } = await withKVCache(
+    c.env.BLOG_CACHE,
+    `post:${slug}`,
+    revalidate,
+    async () => {
+      const post = await client.getPost(slug);
+      return renderToString(<PostDetail post={post} prevPost={prevPost} nextPost={nextPost} />);
+    },
+  );
+  c.set("cacheHit", hit);
   return c.html(html);
 });
 
