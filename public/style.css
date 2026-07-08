@@ -285,9 +285,6 @@
   .h-1 {
     height: calc(var(--spacing) * 1);
   }
-  .h-9 {
-    height: calc(var(--spacing) * 9);
-  }
   .h-9\.5 {
     height: calc(var(--spacing) * 9.5);
   }
@@ -299,9 +296,6 @@
   }
   .w-1 {
     width: calc(var(--spacing) * 1);
-  }
-  .w-31 {
-    width: calc(var(--spacing) * 31);
   }
   .w-31\.25 {
     width: calc(var(--spacing) * 31.25);
@@ -330,17 +324,8 @@
   .flex-auto {
     flex: auto;
   }
-  .flex-shrink {
-    flex-shrink: 1;
-  }
-  .flex-grow {
-    flex-grow: 1;
-  }
   .grow {
     flex-grow: 1;
-  }
-  .border-collapse {
-    border-collapse: collapse;
   }
   .scale-0 {
     --tw-scale-x: 0%;
@@ -359,9 +344,6 @@
   }
   .animate-spin {
     animation: var(--animate-spin);
-  }
-  .resize {
-    resize: both;
   }
   .flex-col {
     flex-direction: column;
@@ -386,9 +368,6 @@
   }
   .justify-end {
     justify-content: flex-end;
-  }
-  .gap-0 {
-    gap: calc(var(--spacing) * 0);
   }
   .gap-0\.5 {
     gap: calc(var(--spacing) * 0.5);
@@ -449,9 +428,6 @@
   }
   .border-line-default {
     border-color: var(--color-line-default);
-  }
-  .border-t-line-default {
-    border-top-color: var(--color-line-default);
   }
   .bg-\[\#0D1117\] {
     background-color: #0D1117;
@@ -516,9 +492,6 @@
   .font-\[monospace\] {
     font-family: monospace;
   }
-  .font-sans {
-    font-family: var(--font-sans);
-  }
   .text-3xl {
     font-size: var(--text-3xl);
     line-height: var(--tw-leading, var(--text-3xl--line-height));
@@ -548,18 +521,6 @@
   .text-\[clamp\(4rem\,10vw\,7rem\)\] {
     font-size: clamp(4rem, 10vw, 7rem);
   }
-  .leading-1 {
-    --tw-leading: calc(var(--spacing) * 1);
-    line-height: calc(var(--spacing) * 1);
-  }
-  .leading-1\.5 {
-    --tw-leading: calc(var(--spacing) * 1.5);
-    line-height: calc(var(--spacing) * 1.5);
-  }
-  .leading-none {
-    --tw-leading: 1;
-    line-height: 1;
-  }
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
@@ -575,9 +536,6 @@
   .tracking-widest {
     --tw-tracking: var(--tracking-widest);
     letter-spacing: var(--tracking-widest);
-  }
-  .text-\[\#3d444d\] {
-    color: #3d444d;
   }
   .text-\[\#9198a1\] {
     color: #9198a1;
@@ -603,9 +561,6 @@
   .no-underline {
     text-decoration-line: none;
   }
-  .underline {
-    text-decoration-line: underline;
-  }
   .opacity-20 {
     opacity: 20%;
   }
@@ -615,10 +570,6 @@
   .shadow {
     --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
   }
   .blur {
     --tw-blur: blur(8px);
@@ -967,10 +918,6 @@
   inherits: false;
   initial-value: solid;
 }
-@property --tw-leading {
-  syntax: "*";
-  inherits: false;
-}
 @property --tw-font-weight {
   syntax: "*";
   inherits: false;
@@ -1044,11 +991,6 @@
   inherits: false;
   initial-value: 0 0 #0000;
 }
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
 @property --tw-blur {
   syntax: "*";
   inherits: false;
@@ -1111,6 +1053,10 @@
   initial-value: "";
   inherits: false;
 }
+@property --tw-leading {
+  syntax: "*";
+  inherits: false;
+}
 @keyframes spin {
   to {
     transform: rotate(360deg);
@@ -1129,7 +1075,6 @@
       --tw-skew-y: initial;
       --tw-space-x-reverse: 0;
       --tw-border-style: solid;
-      --tw-leading: initial;
       --tw-font-weight: initial;
       --tw-tracking: initial;
       --tw-shadow: 0 0 #0000;
@@ -1146,7 +1091,6 @@
       --tw-ring-offset-width: 0px;
       --tw-ring-offset-color: #fff;
       --tw-ring-offset-shadow: 0 0 #0000;
-      --tw-outline-style: solid;
       --tw-blur: initial;
       --tw-brightness: initial;
       --tw-contrast: initial;
@@ -1162,6 +1106,7 @@
       --tw-drop-shadow-size: initial;
       --tw-duration: initial;
       --tw-content: "";
+      --tw-leading: initial;
     }
   }
 }
