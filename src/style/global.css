@@ -5,4 +5,103 @@
   --color-primary-600: #your-color;
   --color-secondary-400: #your-color;
   --color-secondary-500: #your-color;
+  --color-line-default: #3d444d;
+  --animate-ghost: ghost 16s ease-in-out infinite;
+
+  /* フェードで消えている2%区間(23-25%など)に translate をジャンプさせ、
+     再出現のたびに別の位置に現れるように見せる。100%→0% のループ境界も透明なので繋ぎ目は見えない */
+  @keyframes ghost {
+    0% {
+      opacity: 0;
+      translate: 0 0;
+      rotate: -2deg;
+    }
+    5%,
+    18% {
+      opacity: 0.2;
+    }
+    23% {
+      opacity: 0;
+      translate: 0 0;
+      rotate: -2deg;
+    }
+    25% {
+      opacity: 0;
+      translate: 45vw 5vh;
+      rotate: 3deg;
+    }
+    30%,
+    43% {
+      opacity: 0.2;
+    }
+    48% {
+      opacity: 0;
+      translate: 45vw 5vh;
+      rotate: 3deg;
+    }
+    50% {
+      opacity: 0;
+      translate: 15vw 35vh;
+      rotate: -3deg;
+    }
+    55%,
+    68% {
+      opacity: 0.2;
+    }
+    73% {
+      opacity: 0;
+      translate: 15vw 35vh;
+      rotate: -3deg;
+    }
+    75% {
+      opacity: 0;
+      translate: 50vw 22vh;
+      rotate: 2deg;
+    }
+    80%,
+    93% {
+      opacity: 0.2;
+    }
+    100% {
+      opacity: 0;
+      translate: 50vw 22vh;
+      rotate: 2deg;
+    }
+  }
+}
+
+@layer base {
+  main a {
+    @apply text-primary-500 underline hover:opacity-80 transition-opacity;
+  }
+}
+
+@layer components {
+  .prose h1 {
+    @apply text-2xl font-bold text-white mt-8 mb-4;
+  }
+  .prose h2 {
+    @apply text-xl font-bold text-white mt-6 mb-3;
+  }
+  .prose h3 {
+    @apply text-lg font-semibold text-white mt-4 mb-2;
+  }
+  .prose p {
+    @apply text-base leading-relaxed text-gray-200 text-[16px];
+  }
+  .prose a {
+    @apply text-primary-500 hover:opacity-70 transition-opacity;
+  }
+  .prose ul {
+    @apply list-disc pl-6 mb-4 flex flex-col gap-1;
+  }
+  .prose ol {
+    @apply list-decimal pl-6 mb-4 flex flex-col gap-1;
+  }
+  .prose code {
+    @apply font-mono text-sm bg-[#161b22] px-1.5 py-0.5 rounded;
+  }
+  .prose pre {
+    @apply bg-[#161b22] p-4 rounded-lg overflow-x-auto mb-4;
+  }
 }
