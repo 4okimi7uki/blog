@@ -1,0 +1,42 @@
+name: Preview Deploy (Cloudflare Workers)
+
+on:
+  pull_request:
+
+concurrency:
+  group: preview-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Upload preview version
+        id: deploy
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: versions upload
+
+      - name: Comment preview URL
+        uses: marocchino/sticky-pull-request-comment@v3
+        with:
+          header: preview-url
+          message: |
+            🚀 **Preview URL**: ${{ steps.deploy.outputs.deployment-url }}
+
+            Commit: ${{ github.event.pull_request.head.sha }}
