@@ -37,3 +37,5 @@ lerna-debug.log*
 !.dev.vars.example
 !.env.example
 settings.local.json
+
+memory/
