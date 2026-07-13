@@ -6,7 +6,7 @@ export const withKVCache = async (
   ttl: number,
   fetcher: () => Promise<string>,
 ): Promise<{ html: string; hit: boolean }> => {
-  if (env.ENVIRONMENT !== "production") {
+  if (env.ENVIRONMENT === "production") {
     const cached = await kv.get(key);
     if (cached) return { html: cached, hit: true }; // hit
   }

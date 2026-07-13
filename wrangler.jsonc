@@ -24,6 +24,7 @@
   ],
   "vars": {
     "MICROCMS_SERVICE_DOMAIN": "4okimi7uki-blog",
+    "ENVIRONMENT": "production",
   },
   /**
    * Smart Placement
