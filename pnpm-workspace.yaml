@@ -1,0 +1,7 @@
+ignoredBuiltDependencies:
+  - '@parcel/watcher'
+  - esbuild
+  - lefthook
+  - sharp
+  - unrs-resolver
+  - workerd
