@@ -14,10 +14,11 @@ app.use("*", async (c, next) => {
   const isPreview = new URL(c.req.url).hostname.endsWith(".workers.dev");
   if (!isPreview) return next();
 
-  return basicAuth({
+  const auth = basicAuth({
     username: c.env.BASIC_AUTH_USERNAME,
     password: c.env.BASIC_AUTH_PASSWORD,
   });
+  return auth(c, next);
 });
 
 app.use("*", async (c, next) => {
