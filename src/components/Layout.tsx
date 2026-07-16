@@ -1,5 +1,6 @@
 import { Child } from "hono/jsx";
 
+import { Footer } from "./Footer";
 import { Logo } from "./Logo";
 import { Navigation } from "./Navigation";
 
@@ -62,14 +63,7 @@ export const Layout = ({ title, currentPath, ogImage, description, children }: P
           </aside>
           <main class="flex-auto min-w-0 mt-6 md:mt-0 flex flex-col relative">
             {children}
-            <footer class="md:w-9/12 text-sm flex justify-between items-center mt-20">
-              <div>©︎ 2026 Mizuki Aoki.</div>
-              <ul className="flex">
-                <li>XXX</li>
-                <li>XXX</li>
-                <li>XXX</li>
-              </ul>
-            </footer>
+            <Footer />
           </main>
         </div>
       </body>
