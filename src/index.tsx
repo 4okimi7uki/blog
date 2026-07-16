@@ -11,11 +11,13 @@ import { AppContext } from "./types";
 const app = new Hono<AppContext>();
 
 app.use("*", async (c, next) => {
-  const middleware = basicAuth({
+  const isPreview = new URL(c.req.url).hostname.endsWith(".workers.dev");
+  if (!isPreview) return next();
+
+  return basicAuth({
     username: c.env.BASIC_AUTH_USERNAME,
     password: c.env.BASIC_AUTH_PASSWORD,
   });
-  return middleware(c as any, next);
 });
 
 app.use("*", async (c, next) => {
