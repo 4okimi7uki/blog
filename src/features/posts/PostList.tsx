@@ -11,19 +11,18 @@ type Props = {
 export const PostList = ({ posts }: Props) => {
   return (
     <Layout title={"Blog"} currentPath="/posts">
-      <div class="w-[90%]">
-        <h1 class="mb-4">Blog</h1>
+      <div>
         {posts.length > 0 ? (
-          <ul class="flex flex-col gap-1 px-[4%] py-4 pt-0">
+          <ul class="flex flex-col gap-1 pb-4 divide-y divide-line-default divide-dotted">
             {posts.map((post) => {
               return (
-                <li key={post.id} class="transition-all transition-duration-[.4s] rounded-sm">
+                <li key={post.id} class="transition-all transition-duration-[.4s]">
                   <a
                     href={`posts/${post.id}`}
                     class="hover:opacity-80 text-white transition-all flex justify-between items-center px-5 py-1 no-underline"
                   >
                     <div>{post.title}</div>
-                    <div class="text-[12px] ml-1 w-31.25 text-gray-300">
+                    <div class="text-[12px] ml-1 w-28 text-right text-gray-300">
                       {dayjs(post.publishedAt).format("YYYY/MM/DD")}
                     </div>
                   </a>

@@ -20,7 +20,10 @@ export const Navigation = ({ currentPath }: Props) => {
         {navItems.map(({ href, label }) => {
           const isActive = currentPath === href || (href !== "/" && currentPath.startsWith(href));
           return (
-            <li key={label} class="flex flex-col-reverse md:flex-row text-sm py-1 items-center">
+            <li
+              key={label}
+              class="flex flex-col-reverse md:flex-row text-sm py-1 items-center md:px-0 px-3 md:text-[14px] text-[16px]"
+            >
               <div
                 class={twMerge(
                   `md:relative rounded-full md:mr-2 md:left-px w-1 h-1 mt-1 md:mt-0 transition-transform ${isActive ? "scale-125 bg-primary-500" : "scale-0"}`,
