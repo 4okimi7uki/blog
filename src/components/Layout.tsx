@@ -33,7 +33,7 @@ export const Layout = ({ title, currentPath, ogImage, description, children }: P
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
         <link
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Zen+Maru+Gothic&display=swap"
         />
 
         <meta property="og:site_name" content="4okimi7uki" />
@@ -62,7 +62,7 @@ export const Layout = ({ title, currentPath, ogImage, description, children }: P
             </div>
           </aside>
           <main class="flex-auto min-w-0 mt-6 md:mt-0 flex flex-col relative">
-            {children}
+            <div class="w-full md:w-9/12">{children}</div>
             <Footer />
           </main>
         </div>
