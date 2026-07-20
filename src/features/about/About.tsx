@@ -2,7 +2,7 @@ import { Child } from "hono/jsx";
 
 import { Layout } from "../../components/Layout";
 
-const DIVIDER = "-".repeat(41);
+const DIVIDER = "=".repeat(41);
 
 const Command = ({ children }: { children: Child }) => (
   <p>
