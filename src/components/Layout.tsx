@@ -12,7 +12,7 @@ type Props = {
   children: Child;
 };
 const SITE_URL = "https://4okimi7uki.com";
-const DEFAULT_DESCRIPTION = "This is 4okimi7uki's webesite";
+const DEFAULT_DESCRIPTION = "This is 4okimi7uki's website";
 const DEFAULT_OG_IMAGE = `${SITE_URL}/image/default-og.png`; // TODO: 画像を用意
 
 export const Layout = ({ title, currentPath, ogImage, description, children }: Props) => {
