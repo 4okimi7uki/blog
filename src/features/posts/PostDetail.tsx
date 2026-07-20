@@ -21,13 +21,13 @@ export const PostDetail = ({ post, prevPost, nextPost }: Props) => {
   return (
     <Layout title={post?.title} currentPath="/posts">
       <div class="text-center flex flex-col gap-6 mb-4">
-        <h1 class="text-3xl font-bold text-white">{post.title}</h1>
+        <h1 class="text-3xl font-medium text-white">{post.title}</h1>
         <time datetime={publicAt} class="text-[15px]">
           {publicAt}
         </time>
       </div>
       {post.eyecatch?.url && (
-        <div class="w-full h-[300px] bg-black overflow-hidden relative mb-8">
+        <div class="w-full h-75 bg-black overflow-hidden relative mb-8">
           <img
             src={post.eyecatch?.url}
             alt="eyecatch"

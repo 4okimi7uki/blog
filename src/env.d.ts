@@ -2,4 +2,5 @@
 interface Env {
   BASIC_AUTH_USERNAME: string;
   BASIC_AUTH_PASSWORD: string;
+  MICROCMS_WEBHOOK_SECRET: string;
 }
