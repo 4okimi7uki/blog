@@ -4,6 +4,7 @@
   "packageManager": "pnpm@10.28.2",
   "scripts": {
     "build:css": "tailwindcss -i ./src/style/global.css -o ./public/style.css",
+    "copy:terminal": "cp node_modules/terminal-demo/dist/index.js public/js/terminal-demo.js && cp node_modules/terminal-demo/dist/style.css public/css/terminal-demo.css",
     "dev:css": "tailwindcss -i ./src/style/global.css -o ./public/style.css --watch",
     "dev": "wrangler dev",
     "dev:all": "concurrently --names \"wrangler,tailwind\" \"pnpm dev\" \"pnpm dev:css\"",
@@ -33,7 +34,7 @@
     "eslint-plugin-import-x": "^4.17.1",
     "eslint-plugin-unused-imports": "^4.4.1",
     "lefthook": "^2.1.9",
-    "wrangler": "^4.110.0",
-    "prettier": "^3.9.1"
+    "prettier": "^3.9.1",
+    "wrangler": "^4.110.0"
   }
 }
