@@ -6,6 +6,7 @@ import { getMicroCMSClient } from "./lib/microcms";
 import { about } from "./routes/about";
 import { misc } from "./routes/misc";
 import { posts } from "./routes/posts";
+import { robots } from "./routes/robots";
 import { AppContext } from "./types";
 
 const app = new Hono<AppContext>();
@@ -33,6 +34,7 @@ app.use("*", async (c, next) => {
 app.route("/", about);
 app.route("/posts", posts);
 app.route("/misc", misc);
+app.route("/robots.txt", robots);
 
 app.notFound((c) => c.html(<NotFound />, 404));
 
