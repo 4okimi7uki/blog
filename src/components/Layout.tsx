@@ -11,8 +11,8 @@ type Props = {
   ogImage?: string;
   children: Child;
 };
-const SITE_URL = "https://cloudflare-blog.example.workers.dev"; // TODO: 本番ドメインに差し替え
-const DEFAULT_DESCRIPTION = "This is 4okimi7uki's hobby site";
+const SITE_URL = "https://4okimi7uki.com";
+const DEFAULT_DESCRIPTION = "This is 4okimi7uki's webesite";
 const DEFAULT_OG_IMAGE = `${SITE_URL}/image/default-og.png`; // TODO: 画像を用意
 
 export const Layout = ({ title, currentPath, ogImage, description, children }: Props) => {
@@ -23,6 +23,18 @@ export const Layout = ({ title, currentPath, ogImage, description, children }: P
   return (
     <html lang="ja">
       <head>
+        {/* Google tag (gtag.js) */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-07KL2ZEWEQ"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-07KL2ZEWEQ');`,
+          }}
+        ></script>
+
         <meta charset={"utf-8"} />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{pageTitle}</title>
