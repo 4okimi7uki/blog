@@ -35,6 +35,6 @@
     "eslint-plugin-unused-imports": "^4.4.1",
     "lefthook": "^2.1.10",
     "prettier": "^3.9.1",
-    "wrangler": "^4.110.0"
+    "wrangler": "^4.112.0"
   }
 }
