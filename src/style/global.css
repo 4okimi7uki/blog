@@ -2,10 +2,14 @@
 
 @theme {
   --color-primary-500: #f4c200;
-  --color-primary-600: #your-color;
-  --color-secondary-400: #your-color;
-  --color-secondary-500: #your-color;
   --color-line-default: #3d444d;
+  --color-term-fg: #c9d1d9;
+  --color-term-white: #f0f6fc;
+  --color-term-gray: #8b949e;
+  --color-term-cyan: #58a6ff;
+  --color-term-green: #7ee787;
+  --color-term-yellow: #d29922;
+  --color-term-purple: #bc8cff;
 }
 
 @font-face {
@@ -29,7 +33,7 @@
 
 @font-face {
   font-family: "PlemolJP35Console";
-  src: url("/fonts/PlemolJP35Console-Regular") format("truetype");
+  src: url("/fonts/PlemolJP35Console-Regular.ttf") format("truetype");
   font-weight: 400;
   font-display: swap;
 }
@@ -52,6 +56,15 @@
 }
 
 @layer components {
+  .terminal {
+    font-family: "PlemolJP35Console", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    @apply text-sm leading-relaxed whitespace-pre-wrap break-words text-term-fg;
+  }
+  .term-cursor {
+    @apply ml-0.5 inline-block h-4 w-2 bg-[#ec5114] align-text-bottom;
+    animation: term-blink 1s step-end infinite;
+  }
+
   .prose h1 {
     @apply text-2xl font-bold text-white mt-8 mb-4;
   }
@@ -78,5 +91,11 @@
   }
   .prose pre {
     @apply bg-[#161b22] p-4 rounded-lg overflow-x-auto mb-4;
+  }
+}
+
+@keyframes term-blink {
+  50% {
+    opacity: 0;
   }
 }
