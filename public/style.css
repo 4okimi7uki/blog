@@ -763,33 +763,33 @@
 }
 @font-face {
   font-family: "PlemolJP35";
-  src: url("/fonts/PlemolJP35-Regular.ttf") format("truetype");
+  src: url("/fonts/PlemolJP35-Regular.woff2") format("woff2");
   font-weight: 400;
-  font-display: swap;
+  font-display: optional;
 }
 @font-face {
   font-family: "PlemolJP35";
-  src: url("/fonts/PlemolJP35-ExtraLight.ttf") format("truetype");
+  src: url("/fonts/PlemolJP35-ExtraLight.woff2") format("woff2");
   font-weight: 300;
-  font-display: swap;
+  font-display: optional;
 }
 @font-face {
   font-family: "PlemolJP35";
-  src: url("/fonts/PlemolJP35-Medium.ttf") format("truetype");
+  src: url("/fonts/PlemolJP35-Medium.woff2") format("woff2");
   font-weight: 500;
-  font-display: swap;
+  font-display: optional;
 }
 @font-face {
   font-family: "PlemolJP35Console";
-  src: url("/fonts/PlemolJP35Console-Regular.ttf") format("truetype");
+  src: url("/fonts/PlemolJP35Console-Regular.woff2") format("woff2");
   font-weight: 400;
-  font-display: swap;
+  font-display: optional;
 }
 @font-face {
   font-family: "PlemolJP35Console";
-  src: url("/fonts/PlemolJP35Console-Light.ttf") format("truetype");
+  src: url("/fonts/PlemolJP35Console-Light.woff2") format("woff2");
   font-weight: 300;
-  font-display: swap;
+  font-display: optional;
 }
 @layer base {
   main {

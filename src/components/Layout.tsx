@@ -41,6 +41,20 @@ export const Layout = ({ title, currentPath, ogImage, description, children }: P
         <meta name="description" content={pageDescription} />
         <meta name="theme-color" content="#0D1117" />
         <link rel="canonical" href={pageUrl} />
+        <link
+          rel="preload"
+          as="font"
+          type="font/woff2"
+          href="/fonts/PlemolJP35-ExtraLight.woff2"
+          crossorigin=""
+        />
+        <link
+          rel="preload"
+          as="font"
+          type="font/woff2"
+          href="/fonts/PlemolJP35-Regular.woff2"
+          crossorigin=""
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
         <link
