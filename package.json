@@ -6,10 +6,10 @@
     "build:css": "tailwindcss -i ./src/style/global.css -o ./public/style.css",
     "copy:terminal": "cp node_modules/terminal-demo/dist/index.js public/js/terminal-demo.js && cp node_modules/terminal-demo/dist/style.css public/css/terminal-demo.css",
     "dev:css": "tailwindcss -i ./src/style/global.css -o ./public/style.css --watch",
-    "dev": "wrangler dev",
-    "dev:all": "concurrently --names \"wrangler,tailwind\" \"pnpm dev\" \"pnpm dev:css\"",
-    "deploy": "wrangler deploy --minify",
-    "cf-typegen": "wrangler types",
+    "dev": "cf dev",
+    "dev:all": "concurrently --names \"cf,tailwind\" \"pnpm dev\" \"pnpm dev:css\"",
+    "deploy": "cf deploy",
+    "cf-typegen": "cf workers types",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
     "format": "prettier --write src",
@@ -28,6 +28,7 @@
     "@types/node": "^26.1.1",
     "@typescript-eslint/eslint-plugin": "^8.64.0",
     "@typescript-eslint/parser": "^8.64.0",
+    "cf": "1.0.0-beta.21",
     "concurrently": "^10.0.3",
     "eslint": "^10.7.0",
     "eslint-config-prettier": "^10.1.8",
@@ -35,6 +36,6 @@
     "eslint-plugin-unused-imports": "^4.4.1",
     "lefthook": "^2.1.10",
     "prettier": "^3.9.5",
-    "wrangler": "^4.112.0"
+    "wrangler": "^4.152.0"
   }
 }
