@@ -1,0 +1,14 @@
+my_history
+├── 2016_shibaura-it
+│   └── mathematical-sciences.md
+├── 2020_outsourcing-technology
+│   └── tech-instructor.md
+├── 2021_automotive-supplier
+│   └── embedded-engineer.md
+├── 2024_gooya
+│   └── web-engineer.md
+├── 2024_kirei-produce
+│   └── in-house-se.md
+├── 2025_chot-inc
+│   └── frontend-engineer.md
+└── current -> 2025_chot-inc
