@@ -37,6 +37,7 @@
     "eslint-plugin-unused-imports": "^4.4.1",
     "lefthook": "^2.1.10",
     "prettier": "^3.9.5",
+    "typescript": "~6.0.3",
     "wrangler": "^4.162.0"
   }
 }
