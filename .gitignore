@@ -39,3 +39,7 @@ lerna-debug.log*
 settings.local.json
 
 memory/
+
+# cloudflare cli
+.cloudflare/output/
+.cloudflare/state/
