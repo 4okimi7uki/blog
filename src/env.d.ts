@@ -4,3 +4,8 @@ interface Env {
   BASIC_AUTH_PASSWORD: string;
   MICROCMS_WEBHOOK_SECRET: string;
 }
+
+declare module "*.txt" {
+  const content: string;
+  export default content;
+}

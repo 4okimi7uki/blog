@@ -6,20 +6,21 @@
     "build:css": "tailwindcss -i ./src/style/global.css -o ./public/style.css",
     "copy:terminal": "cp node_modules/terminal-demo/dist/index.js public/js/terminal-demo.js && cp node_modules/terminal-demo/dist/style.css public/css/terminal-demo.css",
     "dev:css": "tailwindcss -i ./src/style/global.css -o ./public/style.css --watch",
-    "dev": "wrangler dev",
-    "dev:all": "concurrently --names \"wrangler,tailwind\" \"pnpm dev\" \"pnpm dev:css\"",
-    "deploy": "wrangler deploy --minify",
-    "cf-typegen": "wrangler types",
+    "dev": "cf dev -- --live-reload",
+    "dev:all": "concurrently --names \"cf,tailwind\" \"pnpm dev\" \"pnpm dev:css\"",
+    "deploy": "cf deploy",
+    "cf-typegen": "cf workers types",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
     "format": "prettier --write src",
     "typecheck": "tsc --noEmit",
-    "postinstall": "lefthook install"
+    "postinstall": "lefthook install",
+    "gen:history": "cd content && tree --noreport my_history > ../src/assets/my-history.txt"
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.3.3",
     "dayjs": "^1.11.21",
-    "hono": "^4.12.29",
+    "hono": "^4.13.5",
     "microcms-js-sdk": "^3.4.0",
     "tailwind-merge": "^3.6.0",
     "tailwindcss": "^4.3.1"
@@ -28,6 +29,7 @@
     "@types/node": "^26.1.1",
     "@typescript-eslint/eslint-plugin": "^8.64.0",
     "@typescript-eslint/parser": "^8.64.0",
+    "cf": "1.0.0-beta.32",
     "concurrently": "^10.0.3",
     "eslint": "^10.7.0",
     "eslint-config-prettier": "^10.1.8",
@@ -35,6 +37,7 @@
     "eslint-plugin-unused-imports": "^4.4.1",
     "lefthook": "^2.1.10",
     "prettier": "^3.9.5",
-    "wrangler": "^4.112.0"
+    "typescript": "~6.0.3",
+    "wrangler": "^4.162.0"
   }
 }
