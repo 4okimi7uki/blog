@@ -49,6 +49,10 @@ const MOTD_LINKS: [string, string][] = [
   ["X", "https://x.com/0000ff_ki"],
 ];
 
+const USER = "root";
+const HOST = "4okimi7uki.com";
+const USER_AT_HOST = `${USER}@${HOST}`;
+
 // macOS style, e.g. "Thu Nov 12 23:18:34"
 const formatLastLogin = (date: Date) => {
   const p = Object.fromEntries(
@@ -60,7 +64,7 @@ const formatLastLogin = (date: Date) => {
 const Command = ({ children }: { children: Child }) => (
   <p>
     <span aria-hidden="true">
-      <span class="text-primary-500">root@4okimi7uki.com:~</span>{" "}
+      <span class="text-primary-500">{USER_AT_HOST}:~</span>{" "}
       <span class="text-term-cyan">$</span>{" "}
     </span>
     <span class="text-term-white">{children}</span>
@@ -96,6 +100,7 @@ export const About = () => {
   return (
     <Layout title="About" currentPath="/">
       <section class="terminal flex flex-col gap-6">
+        <h1 class="sr-only">4okimi7uki - Software Engineer</h1>
         <div>
           <p>Last login: {formatLastLogin(new Date())} on ttys005</p>
           <pre aria-hidden="true" class="mt-4 mb-5 hidden text-primary-500 sm:block">
@@ -133,8 +138,11 @@ export const About = () => {
             </pre>
             <div>
               <ul>
-                <li>xxxxxx@4okimi7uki.com</li>
-                <li>--------------------------</li>
+                <li>
+                  <span class="text-primary-500 font-bold">{USER}</span>@
+                  <span class="text-primary-500 font-bold">{HOST}</span>
+                </li>
+                <li>{"-".repeat(USER_AT_HOST.length)}</li>
                 {FASTFETCH.map(([category, stack]) => (
                   <li class="grid grid-cols-5 gap-1">
                     <p class="text-term-purple col-span-2">{category}:</p>
