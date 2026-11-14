@@ -14,7 +14,8 @@
     "lint:fix": "eslint src --fix",
     "format": "prettier --write src",
     "typecheck": "tsc --noEmit",
-    "postinstall": "lefthook install"
+    "postinstall": "lefthook install",
+    "gen:history": "cd content && tree --noreport my_history > ../src/assets/my-history.txt"
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.3.3",

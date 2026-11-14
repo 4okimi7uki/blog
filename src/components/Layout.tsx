@@ -12,7 +12,7 @@ type Props = {
   children: Child;
 };
 const SITE_URL = "https://4okimi7uki.com";
-const DEFAULT_DESCRIPTION = "This is 4okimi7uki's website";
+const DEFAULT_DESCRIPTION = `こんにちは、ソフトウェアエンジニア 4okimi7uki のサイトです。フロントエンドを中心とした開発の日々を綴ったり綴らなかったり、筋トレの記録を残したり残さなかったりするページです。 / Hi, I'm 4okimi7uki, a software engineer. I sometimes write about my frontend development, sometimes log my workouts, and sometimes do neither.`;
 const DEFAULT_OG_IMAGE = `${SITE_URL}/image/default-og.png`; // TODO: 画像を用意
 
 export const Layout = ({ title, currentPath, ogImage, description, children }: Props) => {
@@ -88,7 +88,7 @@ export const Layout = ({ title, currentPath, ogImage, description, children }: P
             </div>
           </aside>
           <main class="flex-auto min-w-0 mt-6 md:mt-0 flex flex-col relative">
-            <div class="w-full md:w-9/12">{children}</div>
+            <div class="w-full md:w-10/12">{children}</div>
             <Footer />
           </main>
         </div>
