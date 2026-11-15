@@ -10,6 +10,7 @@
   --color-term-green: #7ee787;
   --color-term-yellow: #d29922;
   --color-term-purple: #bc8cff;
+  --font-term: "PlemolJP35Console", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
 @font-face {
@@ -57,7 +58,7 @@
 
 @layer components {
   .terminal {
-    font-family: "PlemolJP35Console", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-family: var(--font-term);
     @apply text-sm leading-relaxed whitespace-pre-wrap break-words text-term-fg;
   }
   .term-cursor {
