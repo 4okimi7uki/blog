@@ -19,7 +19,7 @@ export const PostList = ({ posts }: Props) => {
                 <li key={post.id} class="transition-opacity transition-duration-[.4s]">
                   <a
                     href={`posts/${post.id}`}
-                    class="hover:opacity-80 text-white transition-all flex justify-between items-center px-5 py-1 no-underline"
+                    class="hover:opacity-80 text-white transition-opacity flex justify-between items-center px-5 py-1 no-underline"
                   >
                     <div>{post.title}</div>
                     <div class="text-[12px] ml-1 w-28 text-right text-gray-300">
