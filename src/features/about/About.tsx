@@ -114,7 +114,7 @@ export const About = () => {
           </div>
         </header>
 
-        <article class="mb-6 text-term-fg leading-[1.6] flex flex-col gap-3">
+        <article class="mb-6 text-term-white leading-[1.6] flex flex-col gap-3">
           <p>
             大学では数理科学科で、関数解析を中心に学んでいました。
             <br />
