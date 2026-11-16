@@ -16,7 +16,7 @@ export const PostList = ({ posts }: Props) => {
           <ul class="flex flex-col gap-1 pb-4 divide-y divide-line-default divide-dotted">
             {posts.map((post) => {
               return (
-                <li key={post.id} class="transition-all transition-duration-[.4s]">
+                <li key={post.id} class="transition-opacity transition-duration-[.4s]">
                   <a
                     href={`posts/${post.id}`}
                     class="hover:opacity-80 text-white transition-all flex justify-between items-center px-5 py-1 no-underline"
