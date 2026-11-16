@@ -55,6 +55,13 @@ export const Layout = ({ title, currentPath, ogImage, description, children }: P
           href="/fonts/PlemolJP35-Regular.woff2"
           crossorigin=""
         />
+        <link
+          rel="preload"
+          as="font"
+          type="font/woff2"
+          href="/fonts/PlemolJP35-Medium.woff2"
+          crossorigin=""
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
         <link

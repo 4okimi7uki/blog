@@ -3,6 +3,7 @@ import { Child } from "hono/jsx";
 import ANSI_LOGO from "../../assets/ascii-art.txt";
 import BANNER_SP from "../../assets/banner-sp.txt";
 import BANNER from "../../assets/banner.txt";
+import { DonutsIcon } from "../../assets/Icon";
 import MY_HISTORY from "../../assets/my-history.txt";
 import { Layout } from "../../components/Layout";
 import { parseAnsi } from "../../lib/ansi";
@@ -44,12 +45,7 @@ const LAST_LOGIN_FORMAT = new Intl.DateTimeFormat("en-US", {
   hourCycle: "h23",
 });
 
-const MOTD_LINKS: [string, string][] = [
-  ["GitHub", "https://github.com/4okimi7uki"],
-  ["X", "https://x.com/0000ff_ki"],
-];
-
-const USER = "root";
+const USER = "guest";
 const HOST = "4okimi7uki.com";
 const USER_AT_HOST = `${USER}@${HOST}`;
 
@@ -74,7 +70,6 @@ const Command = ({ children }: { children: Child }) => (
 const FASTFETCH: [string, string][] = [
   ["OS", "Human 30.0"],
   ["Kernel", "Curiosity-driven"],
-  ["Role", "Software Engineer"],
   ["Languages", "TypeScript, Go"],
   ["Frameworks", "React, Next.js, Hono"],
   ["Platforms", "Cloudflare, Vercel"],
@@ -99,89 +94,116 @@ const palette = {
 export const About = () => {
   return (
     <Layout title="About" currentPath="/">
-      <section class="terminal flex flex-col gap-6">
-        <h1 class="sr-only">4okimi7uki - Software Engineer</h1>
-        <div>
-          <p>Last login: {formatLastLogin(new Date())} on ttys005</p>
-          <pre aria-hidden="true" class="mt-4 mb-5 hidden text-primary-500 sm:block">
-            {BANNER.trimEnd()}
-          </pre>
-          <pre aria-hidden="true" class="mt-4 mb-5 text-primary-500 sm:hidden">
-            {BANNER_SP.trimEnd()}
-          </pre>
-          <p class="mb-4">Welcome to 4okimi7uki.com (Human 30.0 Curiosity-driven)</p>
-          <ul class="mb-4">
-            {MOTD_LINKS.map(([label, href]) => (
-              <li>
-                {` * ${`${label}:`.padEnd(9)}`}
-                <a
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="text-term-fg decoration-term-gray/50 underline-offset-2 hover:text-primary-500"
-                >
-                  {href}
-                </a>
-              </li>
-            ))}
-          </ul>
-          <p>0 updates can be applied immediately.</p>
-        </div>
+      <section class="flex flex-col gap-6">
+        <header class="flex items-center gap-5">
+          <div
+            aria-hidden="true"
+            class="grid size-14 shrink-0 place-items-center rounded-md border border-white/15 sm:size-16"
+          >
+            <DonutsIcon width={34} height={34} color="#FF80B4" />
+          </div>
+          <div class="min-w-0">
+            <p aria-hidden="true" class="mb-1 font-term text-xs text-term-gray">
+              ~ $ whoami
+            </p>
+            <h1 class="text-2xl font-medium tracking-tight text-term-white">Mizuki Aoki</h1>
+            <p class="mt-0.5 font-term text-xs text-term-gray">
+              Software Engineer — Compiled with sugar, built with protein.
+              <span class="term-cursor-unfocused"></span>
+            </p>
+          </div>
+        </header>
 
-        <div>
-          <Command>fastfetch</Command>
-          <div class="flex flex-col gap-5 sm:flex-row">
-            <pre aria-hidden="true" class="shrink-0 text-[8px] leading-[1.2]">
-              {LOGO_SEGMENTS.map(({ color, text }) =>
-                color ? <span style={`color:${color}`}>{text}</span> : text,
-              )}
+        <article class="mb-6 text-term-white leading-[1.6] flex flex-col gap-3">
+          <p>
+            大学では数理科学科で、関数解析を中心に学んでいました。
+            <br />
+            今はソフトウェアエンジニアとして、主にフロントエンドの開発をしています。
+          </p>
+          <p>
+            何かを作るときは、まず「なぜそうなっているのか」が気になります。設計や実装に筋が通っていて、
+            <span class="italic">well-defined</span> なものに出会うと、ちょっと嬉しくなります。
+          </p>
+
+          <p>最近はバルクアップにも力を入れています💪</p>
+        </article>
+
+        {/** Terminal UI ------ */}
+        <article class="terminal rounded-lg border border-white/10 bg-black/30">
+          <div class="flex items-center gap-1.5 border-b border-white/10 px-3 py-2">
+            <span class="size-2.5 rounded-full bg-red-400/70" />
+            <span class="size-2.5 rounded-full bg-yellow-400/70" />
+            <span class="size-2.5 rounded-full bg-green-400/70" />
+            <span class="ml-2 font-mono text-xs text-neutral-500">
+              <span class="text-white">{">_"} zsh </span>~
+            </span>
+          </div>
+
+          <div class="p-4">
+            <p>Last login: {formatLastLogin(new Date())} on ttys005</p>
+            <pre aria-hidden="true" class="mt-4 mb-5 hidden text-term-gray sm:block">
+              {BANNER.trimEnd()}
             </pre>
-            <div>
-              <ul>
-                <li>
-                  <span class="text-primary-500 font-bold">{USER}</span>@
-                  <span class="text-primary-500 font-bold">{HOST}</span>
-                </li>
-                <li>{"-".repeat(USER_AT_HOST.length)}</li>
-                {FASTFETCH.map(([category, stack]) => (
-                  <li class="grid grid-cols-5 gap-1">
-                    <p class="text-term-purple col-span-2">{category}:</p>
-                    <p class="col-span-3">{stack}</p>
-                  </li>
-                ))}
-              </ul>
-              <div>
-                <div class="flex mt-6">
-                  {palette.normal.map((c) => {
-                    return <span class="block w-8 h-6" style={{ background: c }}></span>;
-                  })}
-                </div>
-                <div class="flex">
-                  {palette.bright.map((c) => {
-                    return <span class="block w-8 h-6" style={{ background: c }}></span>;
-                  })}
+            <pre aria-hidden="true" class="mt-4 mb-5 text-term-gray sm:hidden">
+              {BANNER_SP.trimEnd()}
+            </pre>
+
+            <div class="mb-5">
+              <Command>fastfetch</Command>
+              <div class="flex flex-col gap-5 sm:flex-row">
+                <pre aria-hidden="true" class="shrink-0 text-[8px] leading-[1.2]">
+                  {LOGO_SEGMENTS.map(({ color, text }) =>
+                    color ? <span style={`color:${color}`}>{text}</span> : text,
+                  )}
+                </pre>
+                <div>
+                  <ul>
+                    <li>
+                      <span class="text-primary-500 font-bold">{USER}</span>@
+                      <span class="text-primary-500 font-bold">{HOST}</span>
+                    </li>
+                    <li>{"-".repeat(USER_AT_HOST.length)}</li>
+                    {FASTFETCH.map(([category, stack]) => (
+                      <li class="grid grid-cols-5 gap-1">
+                        <p class="text-term-purple col-span-2">{category}:</p>
+                        <p class="col-span-3">{stack}</p>
+                      </li>
+                    ))}
+                  </ul>
+                  <div>
+                    <div class="flex mt-6">
+                      {palette.normal.map((c) => {
+                        return <span class="block w-8 h-6" style={{ background: c }}></span>;
+                      })}
+                    </div>
+                    <div class="flex">
+                      {palette.bright.map((c) => {
+                        return <span class="block w-8 h-6" style={{ background: c }}></span>;
+                      })}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
+
+            <div class="mb-5">
+              <Command>tree -C my_history</Command>
+              <pre>
+                {HISTORY_LINES.map(({ branch, name }, i) => (
+                  <>
+                    {i > 0 && "\n"}
+                    <span class="text-term-gray">{branch}</span>
+                    <TreeEntry name={name} />
+                  </>
+                ))}
+              </pre>
+            </div>
+
+            <Command>
+              <span class="term-cursor"></span>
+            </Command>
           </div>
-        </div>
-
-        <div>
-          <Command>tree -C my_history</Command>
-          <pre>
-            {HISTORY_LINES.map(({ branch, name }, i) => (
-              <>
-                {i > 0 && "\n"}
-                <span class="text-term-gray">{branch}</span>
-                <TreeEntry name={name} />
-              </>
-            ))}
-          </pre>
-        </div>
-
-        <Command>
-          <span class="term-cursor"></span>
-        </Command>
+        </article>
       </section>
     </Layout>
   );
