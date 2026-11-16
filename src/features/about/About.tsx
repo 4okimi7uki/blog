@@ -106,7 +106,7 @@ export const About = () => {
             <p aria-hidden="true" class="mb-1 font-term text-xs text-term-gray">
               ~ $ whoami
             </p>
-            <h1 class="text-2xl font-semibold tracking-tight text-term-white">Mizuki Aoki</h1>
+            <h1 class="text-2xl font-medium tracking-tight text-term-white">Mizuki Aoki</h1>
             <p class="mt-0.5 font-term text-xs text-term-gray">
               Software Engineer — Compiled with sugar, built with protein.
               <span class="term-cursor-unfocused"></span>
