@@ -109,10 +109,24 @@ export const About = () => {
             <h1 class="text-2xl font-semibold tracking-tight text-term-white">Mizuki Aoki</h1>
             <p class="mt-0.5 font-term text-xs text-term-gray">
               Software Engineer — Compiled with sugar, built with protein.
-              <span class="term-cursor"></span>
+              <span class="term-cursor-unfocused"></span>
             </p>
           </div>
         </header>
+
+        <article class="mb-6 text-term-fg leading-[1.6] flex flex-col gap-3">
+          <p>
+            大学では数理科学科で、関数解析を中心に学んでいました。
+            <br />
+            今はソフトウェアエンジニアとして、主にフロントエンドの開発をしています。
+          </p>
+          <p>
+            何かを作るときは、まず「なぜそうなっているのか」が気になります。設計や実装に筋が通っていて、
+            <span class="italic">well-defined</span> なものに出会うと、ちょっと嬉しくなります。
+          </p>
+
+          <p>最近はバルクアップにも力を入れています💪</p>
+        </article>
 
         {/** Terminal UI ------ */}
         <article class="terminal rounded-lg border border-white/10 bg-black/30">
