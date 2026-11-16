@@ -11,8 +11,9 @@ export const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
             class="text-[#9198a1]"
+            aria-label="mail"
           >
-            <MailIcon width={18} />
+            <MailIcon width={18} aria-hidden="true" />
           </a>
         </li>
         <li>
@@ -21,8 +22,9 @@ export const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
             class="text-[#9198a1]"
+            aria-label="GitHub"
           >
-            <GitHubIcon width={18} />
+            <GitHubIcon width={18} aria-hidden="true" />
           </a>
         </li>
         <li>
@@ -31,8 +33,9 @@ export const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
             class="text-[#9198a1]"
+            aria-label="X"
           >
-            <XIcon width={18} />
+            <XIcon width={18} aria-hidden="true" />
           </a>
         </li>
       </ul>
